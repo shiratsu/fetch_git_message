@@ -15,9 +15,14 @@ module Fastlane
         git_tmp_message = `git rev-list --format=%B --max-count=1 #{value}`
         ary_message = git_tmp_message.lines
 
+        # puts $pub_message
+        # puts ary_message
+
         if ary_message.length > 1 then
             $git_message = $pub_message.concat(" "+ary_message[1])
         end
+        # puts $git_message
+        return $git_message
       end
 
       def self.description
